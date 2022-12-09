@@ -1,0 +1,22 @@
+<div>
+    <h6>Mon panier</h6>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Titre</th>
+                <th>Prix</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.reference}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.price}}€</td>
+                <td><button (click)="removeProduct(product)">Supprimer</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

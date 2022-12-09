@@ -1,0 +1,47 @@
+<form 
+[formGroup]="userInfos"
+(ngSubmit) = "submit()">
+    <input type="text" formControlName="lastName" name="lastName" placeholder="Nom"/>
+    <div *ngIf="lastName?.errors?.required">
+        Veuillez saisir un nom de famille
+    </div>
+    <input type="text" formControlName="firstName" name="firstName" placeholder="Prénom"/>
+    <div *ngIf="firstName?.errors?.required">
+        Veuillez saisir un prénom
+    </div>
+    <app-adress></app-adress>
+    <input type="text" formControlName="phone" name="phone" placeholder="Téléphone"/>
+    <div *ngIf="phone?.errors?.required">
+        Veuillez saisir un numéro de téléphone
+    </div>
+    <div *ngIf="phone?.errors?.minlength">
+        Veuillez saisir un numéro de téléphone valide
+    </div>
+    <input type="email" formControlName="email" name="email" placeholder="E-mail"/>
+    <div *ngIf="email?.errors?.required">
+        Veuillez saisir un mail
+    </div>
+    <div *ngIf="password?.errors?.email">
+        Veuillez rentrer une adresse mail valide
+    </div>
+    <div>
+        <input type="radio" formControlName="sexe" name="sexe" value="Homme" id="sexeChoice1">
+        <label for="sexeChoice1">Homme</label>
+        <input type="radio" formControlName="sexe" name="sexe" value="Femme" id="sexeChoice2">
+        <label for="sexeChoice2">Femme</label>
+        <input type="radio" formControlName="sexe" name="sexe" value="nonBinaire" id="sexeChoice3">
+        <label for="sexeChoice3">Non-binaire</label>
+    </div>
+    <div *ngIf="sexe?.errors?.required">
+        Veuillez sélectionner un sexe
+    </div>
+    <input type="password" formControlName="password" name="password" placeholder="Mot de passe"/>
+    <div *ngIf="password?.errors?.minlength">
+        Votre mot de passe doit faire au moins 6 caractères
+    </div>
+    <input type="text" formControlName="login" name="login" placeholder="Login"/>
+    <div *ngIf="login?.errors?.required">
+        Veuillez saisir un login
+    </div>
+    <input type="submit" value="Valider" />
+</form>

@@ -1,0 +1,28 @@
+<div>
+    <div>
+        <div>
+            <h6>Catalogue</h6>
+        </div>
+        <input [(ngModel)]="researchInput" placeholder="Recherchez par n'importe quel champ"/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Référence</th>
+                    <th>Prix</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let o of products | catalogueFilter: researchInput">
+                    <td>{{o.title}}</td>
+                    <td>{{o.reference}}</td>
+                    <td>{{o.price}}</td>
+                    <td><button (click)="redirectDetails(o.reference)"> Détails </button></td>
+                    <td><button (click)="addPanier(o.title, o.reference, o.price)" >Ajouter au panier</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
