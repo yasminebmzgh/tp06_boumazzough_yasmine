@@ -15,4 +15,7 @@ export class HttpServiceService {
   public getCatalogue () : Observable<Product[]> {
     return this.httpClient.get<Product[]> (environment.getCatalogue);
   }
+  search(search: string): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(environment.apiUrl + '/product/');
+  }
 }

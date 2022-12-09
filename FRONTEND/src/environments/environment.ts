@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  getCatalogue: '/assets/bouchon.json'
+  getCatalogue: '/assets/bouchon.json',
+  apiUrl: 'https://met-02-boumazzough-yasmine.onrender.com/api'
+
 };
 
 /*
